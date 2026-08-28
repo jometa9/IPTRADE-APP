@@ -2,7 +2,9 @@
 name = "iptrade-api"
 version = "4.2.0"
 edition = "2021"
-description = "IPTRADE API"
+description = "IPTRADE local copy-trading API"
+license = "MIT"
+repository = "https://github.com/jometa9/IPTRADE-APP"
 
 [features]
 default = []
