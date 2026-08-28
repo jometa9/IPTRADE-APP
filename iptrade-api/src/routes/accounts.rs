@@ -1097,17 +1097,12 @@ pub async fn apply_tcp_for_account(
         let key_with_month = AuthState::key_with_month(&state.auth_state.api_key);
         let secret_with_month = AuthState::key_with_month(&state.auth_state.api_secret);
         let timeout = std::time::Duration::from_secs(timings::HTTP_REQUEST_TIMEOUT_SECS.min(10));
-        let mut tcp_req = state
+        let tcp_req = state
             .http_client
             .put(&put_url)
             .timeout(timeout)
             .header(API_KEY_HEADER, &key_with_month)
             .header(API_SECRET_HEADER, &secret_with_month);
-        if let Ok(secret) = std::env::var("IPTRADE_STATE_SECRET") {
-            if !secret.trim().is_empty() {
-                tcp_req = tcp_req.header("X-Iptrade-Bridge-Internal", secret.trim());
-            }
-        }
         match tcp_req
             .send()
             .await

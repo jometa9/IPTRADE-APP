@@ -19,8 +19,6 @@
   ${endif}
   nsExec::ExecToLog 'taskkill /IM "${PRODUCT_FILENAME}.exe" /F /T 2>nul'
   nsExec::ExecToLog 'taskkill /IM iptrade-api.exe /F /T 2>nul'
-  nsExec::ExecToLog 'taskkill /IM iptrade-mt5-api.exe /F /T 2>nul'
-  nsExec::ExecToLog 'taskkill /IM rthost.exe /F /T 2>nul'
   nsExec::ExecToLog 'cmd.exe /c ping -n 2 127.0.0.1 >nul'
 !macroend
 
