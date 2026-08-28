@@ -1,0 +1,33 @@
+[package]
+name = "iptrade-api"
+version = "4.2.0"
+edition = "2021"
+description = "IPTRADE API"
+
+[features]
+default = []
+
+[dependencies]
+aes-gcm = "0.10"
+axum = { version = "0.7", features = ["json", "macros", "ws"] }
+base64 = "0.21"
+chrono = "0.4"
+directories = "5"
+rand = "0.8"
+reqwest = { version = "0.11", features = ["json"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+tokio = { version = "1", features = ["full"] }
+futures-util = "0.3"
+tokio-tungstenite = { version = "0.21", features = ["native-tls"] }
+tower = "0.4"
+tower-http = { version = "0.5", features = ["cors"] }
+tracing = "0.1"
+urlencoding = "2"
+uuid = { version = "1", features = ["v4"] }
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+sysinfo = "0.33"
+utoipa = { version = "4", features = ["axum_extras"] }
+walkdir = "2"
+zip = "2"

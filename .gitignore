@@ -1,0 +1,60 @@
+# Dependencies
+node_modules/
+
+# Environment & secrets
+.env
+.env.api
+.env.local
+.env.*.local
+iptrade-api/.env
+*.pem
+*.key
+
+# Build outputs — frontend / Vite
+dist/
+*.tsbuildinfo
+
+# Electron
+electron/dist/
+release/
+out/
+.cache/
+.electron-dev-data/
+
+# Rust
+target/
+**/*.rs.bk
+
+# .NET / Visual Studio / Rider
+**/bin/
+**/obj/
+**/[Bb]in/
+**/[Oo]bj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+.idea/
+*.DotSettings.user
+TestResults/
+**/PublishProfiles/*.pubxml.user
+
+# Logs & temp
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs_temp.txt
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Misc
+iptrade-api/mt
+
+# Generated electron-builder config
+.electron-builder.json

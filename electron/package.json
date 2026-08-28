@@ -1,0 +1,6 @@
+{
+  "name": "iptrade-electron",
+  "private": true,
+  "type": "commonjs",
+  "main": "dist/main.js"
+}

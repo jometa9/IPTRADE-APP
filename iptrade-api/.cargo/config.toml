@@ -1,0 +1,5 @@
+# Static link the C Runtime on Windows so the binary does not require
+# Visual C++ Redistributable. Users can run IPTRADE without installing
+# vcredist_x64.exe. Increases binary size by ~100KB.
+[target.x86_64-pc-windows-msvc]
+rustflags = ["-C", "target-feature=+crt-static"]

@@ -1,0 +1,3 @@
+IPTRADE will be installed in Applications.
+
+Click Continue.
