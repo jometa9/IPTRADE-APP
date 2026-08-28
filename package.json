@@ -108,7 +108,13 @@
         "CFBundleDisplayName": "IPTRADE",
         "CFBundleName": "IPTRADE"
       },
-      "identity": null
+      "identity": null,
+      "extraResources": [
+        {
+          "from": "target/release/iptrade-api",
+          "to": "bin/iptrade-api"
+        }
+      ]
     },
     "win": {
       "icon": "public/icon.ico",

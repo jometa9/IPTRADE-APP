@@ -9,10 +9,23 @@ interface AfterPackContext {
   appOutDir: string;
 }
 
+function findMacAppBundle(appOutDir: string): string | null {
+  try {
+    return (
+      fs
+        .readdirSync(appOutDir)
+        .map((name) => path.join(appOutDir, name))
+        .find((p) => p.endsWith('.app')) ?? null
+    );
+  } catch {
+    return null;
+  }
+}
+
 function copyRustBinary(electronPlatformName: string, appOutDir: string) {
   const resourcesDir =
     electronPlatformName === 'darwin'
-      ? path.join(appOutDir, 'Contents', 'Resources')
+      ? path.join(findMacAppBundle(appOutDir) ?? path.join(appOutDir, 'IPTRADE.app'), 'Contents', 'Resources')
       : path.join(appOutDir, 'resources');
   const binDir = path.join(resourcesDir, 'bin');
   if (!fs.existsSync(binDir)) {
@@ -78,8 +91,9 @@ function copyBotsToResources(appOutDir: string) {
 }
 
 function ensureBotsNotInMacBundle(appOutDir: string) {
-  const resourcesDir = path.join(appOutDir, 'Contents', 'Resources');
-  const botsDir = path.join(resourcesDir, 'bots');
+  const bundle = findMacAppBundle(appOutDir);
+  if (!bundle) return;
+  const botsDir = path.join(bundle, 'Contents', 'Resources', 'bots');
   if (fs.existsSync(botsDir)) {
     try {
       fs.rmSync(botsDir, { recursive: true });
