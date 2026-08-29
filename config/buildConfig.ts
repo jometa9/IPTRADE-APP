@@ -1,7 +1,7 @@
 import pkg from '../package.json';
 
 export const BUILD_CONFIG = {
-  BASE_URL: 'https://iptradecopier.com',
+  BASE_URL: 'https://jometa9.github.io/IPTRADE',
   FIVEMTRADER_URL: 'https://5mtrader.com',
   // Public repo used for update checks and release downloads.
   GITHUB_REPO: 'jometa9/IPTRADE-APP',

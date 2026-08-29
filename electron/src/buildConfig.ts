@@ -1,7 +1,7 @@
 import pkg from '../../package.json';
 
 export const BUILD_CONFIG = {
-  BASE_URL: 'https://iptradecopier.com',
+  BASE_URL: 'https://jometa9.github.io/IPTRADE',
   APP_VERSION: pkg.version,
   TCP_PORT: 7776,
   FRONTEND_PORT: 7775,

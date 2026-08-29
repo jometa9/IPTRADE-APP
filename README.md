@@ -4,7 +4,7 @@
 
 IPTRADE is a desktop app that copies trades between trading accounts in real time on your own computer. No cloud, no subscription, no account limits — your credentials and trading data never leave your machine.
 
-- Website: [iptradecopier.com](https://iptradecopier.com)
+- Website: [jometa9.github.io/IPTRADE](https://jometa9.github.io/IPTRADE)
 - Downloads: [Releases](https://github.com/jometa9/IPTRADE-APP/releases/latest)
 - Landing page source: [jometa9/IPTRADE](https://github.com/jometa9/IPTRADE)
 - MetaTrader EAs + bridge DLL source: [jometa9/IPTRADE-BOTS](https://github.com/jometa9/IPTRADE-BOTS)
@@ -65,7 +65,7 @@ Three processes, all local:
 IPTRADE does not ship embedded cTrader API credentials — you use your own (takes ~2 minutes, free):
 
 1. Sign in at [openapi.ctrader.com](https://openapi.ctrader.com) and create an application.
-2. Set its **Redirect URL** to `https://iptradecopier.com/auth/local/callback` (that page only forwards the OAuth code back into the app via the `iptrade://` deep link — see [its source](https://github.com/jometa9/IPTRADE/blob/main/app/auth/local/callback/page.tsx)).
+2. Set its **Redirect URL** to `https://jometa9.github.io/IPTRADE/auth/local/callback` (that page only forwards the OAuth code back into the app via the `iptrade://` deep link — see [its source](https://github.com/jometa9/IPTRADE/blob/main/app/auth/local/callback/page.tsx)).
 3. In IPTRADE go to **Config → cTrader API** and paste the app's Client ID and Secret. They are stored encrypted on your machine only.
 
 ### Local API auth

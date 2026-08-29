@@ -363,7 +363,7 @@ function CtraderApiSection() {
         >
           openapi.ctrader.com
         </button>{' '}
-        with the redirect URL <code className="rounded bg-gray-100 px-1">https://iptradecopier.com/auth/local/callback</code>,
+        with the redirect URL <code className="rounded bg-gray-100 px-1">https://jometa9.github.io/IPTRADE/auth/local/callback</code>,
         then paste its Client ID and Secret here. They are stored encrypted on this computer only.
       </p>
       {showForm ? (
