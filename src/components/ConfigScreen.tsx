@@ -353,7 +353,7 @@ function CtraderApiSection() {
   return (
     <section className="flex flex-col gap-2 p-4 border-t border-gray-200">
       <h2 className="text-lg font-semibold text-gray-900">cTrader API</h2>
-      <p className="text-sm text-gray-600 max-w-2xl">
+      <p className="text-sm text-gray-600 w-full">
         To link cTrader accounts, IPTRADE uses your own cTrader Open API application. Create one for
         free at{' '}
         <button
@@ -367,29 +367,29 @@ function CtraderApiSection() {
         then paste its Client ID and Secret here. They are stored encrypted on this computer only.
       </p>
       {showForm ? (
-        <div className="flex flex-col gap-2 max-w-2xl">
-          <input
-            type="text"
-            value={clientIdInput}
-            onChange={(e) => setClientIdInput(e.target.value)}
-            placeholder="Client ID"
-            autoComplete="off"
-            spellCheck={false}
-            className="h-9 rounded-lg border border-gray-200 bg-white px-3 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-gray-400"
-          />
-          <input
-            type="password"
-            value={clientSecretInput}
-            onChange={(e) => setClientSecretInput(e.target.value)}
-            placeholder="Client Secret"
-            autoComplete="off"
-            spellCheck={false}
-            className="h-9 rounded-lg border border-gray-200 bg-white px-3 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-gray-400"
-          />
-          <div className="flex items-center gap-2">
+        <div className="flex flex-col gap-2 w-full">
+          <div className="flex items-center gap-2 w-full">
+            <input
+              type="text"
+              value={clientIdInput}
+              onChange={(e) => setClientIdInput(e.target.value)}
+              placeholder="Client ID"
+              autoComplete="off"
+              spellCheck={false}
+              className="h-9 flex-1 min-w-0 rounded-lg border border-gray-200 bg-white px-3 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-gray-400"
+            />
+            <input
+              type="password"
+              value={clientSecretInput}
+              onChange={(e) => setClientSecretInput(e.target.value)}
+              placeholder="Client Secret"
+              autoComplete="off"
+              spellCheck={false}
+              className="h-9 flex-1 min-w-0 rounded-lg border border-gray-200 bg-white px-3 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-gray-400"
+            />
             <button
               type="button"
-              className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 disabled:opacity-60"
+              className="inline-flex h-9 shrink-0 items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 text-sm font-medium text-gray-900 hover:bg-gray-100 disabled:opacity-60"
               onClick={handleSave}
               disabled={isSaving}
             >
@@ -399,7 +399,7 @@ function CtraderApiSection() {
             {configured && (
               <button
                 type="button"
-                className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 disabled:opacity-60"
+                className="inline-flex h-9 shrink-0 items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 text-sm font-medium text-gray-900 hover:bg-gray-100 disabled:opacity-60"
                 onClick={() => { setIsEditing(false); setSaveError(null); }}
                 disabled={isSaving}
               >
