@@ -1,8 +1,6 @@
-import { ArrowLeft, ArrowRight, ArrowUpRight, Loader } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Loader } from 'lucide-react';
 import type { ReactNode } from 'react';
 import { publicAssetUrl } from '@/lib/publicAssetUrl';
-import { useExternalLink } from '@/hooks/useExternalLink';
-import { cn, urls } from '@/lib/utils';
 import type { AddAccountKind } from './types';
 
 export interface AddAccountPickScreenProps {
@@ -78,8 +76,6 @@ export function AddAccountPickScreen({
   onDeselect,
   detailContent,
 }: AddAccountPickScreenProps) {
-  const { openExternalLink } = useExternalLink();
-
   if (selectedKind !== null) {
     return (
       <div className={pickGroupClass}>
@@ -135,24 +131,6 @@ export function AddAccountPickScreen({
           </button>
         )}
       </div>
-
-      <button
-        type="button"
-        onClick={() => openExternalLink(urls.fiveMTrader)}
-        className={cn(pickConnectionRowClass, 'border-t border-gray-200 bg-black hover:bg-neutral-800')}
-        aria-label="Copy trades in the cloud with 5MTrader — opens 5mtrader.com"
-      >
-        <div className="flex min-w-0 flex-1 flex-col text-left items-start">
-          <h3 className="text-lg font-semibold text-white">5MTrader</h3>
-          <p className="mt-1 text-sm text-white/80">
-            Copy trades in the cloud — no need to keep IPTRADE open. Go to 5mtrader.com to copy
-            trades 24/7 straight from the cloud.
-          </p>
-        </div>
-        <span className="inline-flex shrink-0 self-end rounded p-1">
-          <ArrowUpRight className="h-4 w-4 shrink-0 text-white" aria-hidden />
-        </span>
-      </button>
 
     </div>
   );

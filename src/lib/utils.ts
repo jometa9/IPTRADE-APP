@@ -24,9 +24,6 @@ export const urls = {
   get documentation(): string {
     return `${getWebBase()}/documentation`;
   },
-  get fiveMTrader(): string {
-    return BUILD_CONFIG.FIVEMTRADER_URL;
-  },
   getApiUrl(): string {
     if (typeof window !== 'undefined' && (window.electronAPI || window.location.protocol === 'file:')) {
       return getApiBase();

@@ -92,13 +92,11 @@ npm run build      # cargo build --release + vite build + electron-builder
 - On macOS produces `release/IPTRADE-Setup.dmg` (arm64, ad-hoc signed).
 - On Windows produces `release/IPTRADE-Setup.exe` (NSIS x64, unsigned).
 
-Releases are built by [GitHub Actions](.github/workflows/release.yml): pushing a tag `vX.Y.Z` builds both platforms and publishes a GitHub Release. The app checks `releases/latest` (GitHub API) every 6 hours and shows an update banner when a newer version exists.
+Releases are built by [GitHub Actions](.github/workflows/release.yml). Every push to `main` (except commits containing `[skip ci]`) bumps the patch `version` in `package.json`, tags it `vX.Y.Z`, builds macOS (arm64) and Windows (x64), and publishes a GitHub Release with `IPTRADE-Setup.dmg`, `IPTRADE-Setup.zip` and `IPTRADE-Setup.exe`. The workflow can also be started manually with **Run workflow**.
 
-To cut a release: bump `version` in `package.json` **and** `iptrade-api/Cargo.toml`, commit, then:
+The app checks `releases/latest` (GitHub API) every 6 hours and shows an update banner when a newer version exists.
 
-```bash
-git tag v4.2.1 && git push origin v4.2.1
-```
+`iptrade-api/Cargo.toml` carries its own `version` that the workflow does not bump — update it by hand when you want it to track the app version.
 
 ## Contributing
 

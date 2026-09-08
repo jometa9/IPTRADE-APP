@@ -490,15 +490,6 @@ function AppHeader({
           <button type="button" onClick={handleHelpClick} className="text-gray-400 hover:text-gray-900 cursor-pointer" aria-label="Help" disabled={navDisabled}>
             <HelpCircleIcon className="h-4 w-4" />
           </button>
-          <button
-            type="button"
-            onClick={() => openExternalLink(urls.fiveMTrader)}
-            className="cursor-pointer rounded px-1 text-[15px] font-extrabold leading-none text-black hover:text-neutral-700 disabled:opacity-60"
-            aria-label="Copy trades in the cloud with 5MTrader — opens 5mtrader.com"
-            disabled={navDisabled}
-          >
-            5
-          </button>
         </div>
       </div>
       </div>
